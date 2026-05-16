@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: cube
+      POSTGRES_PASSWORD: cube_pass
+      POSTGRES_DB: tpcds
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/initdb:/docker-entrypoint-initdb.d
+
+  cube:
+    image: cubejs/cube:latest
+    ports:
+      - "4000:4000"
+    environment:
+      CUBEJS_DB_TYPE: postgres
+      CUBEJS_DB_HOST: postgres
+      CUBEJS_DB_PORT: 5432
+      CUBEJS_DB_NAME: tpcds
+      CUBEJS_DB_USER: cube
+      CUBEJS_DB_PASS: cube_pass
+      CUBEJS_API_SECRET: changeme_for_prod
+      CUBEJS_DEV_MODE: "true"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
