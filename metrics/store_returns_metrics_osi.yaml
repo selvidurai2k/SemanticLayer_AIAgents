@@ -1,0 +1,82 @@
+osi_version: '0.1'
+source_table: store_returns
+generated_at: '2026-06-07T22:09:34.680005'
+generated_by: MetricDefinitionAgent v1.0
+metrics:
+- name: total_returns
+  label: Total Returns
+  description: Count of all return transactions
+  source_column: sr_returned_date_sk
+  aggregation_function: COUNT
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_return_amount
+  label: Total Return Amount
+  description: Sum of all return amounts
+  source_column: sr_return_amt
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: average_return_amount
+  label: Average Return Amount
+  description: Average return amount per transaction
+  source_column: sr_return_amt
+  aggregation_function: AVERAGE
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_return_tax
+  label: Total Return Tax
+  description: Sum of all return taxes
+  source_column: sr_return_tax
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_return_quantity
+  label: Total Return Quantity
+  description: Sum of all return quantities
+  source_column: sr_return_quantity
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_fee
+  label: Total Fee
+  description: Sum of all fees associated with returns
+  source_column: sr_fee
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_return_ship_cost
+  label: Total Return Ship Cost
+  description: Sum of all return shipping costs
+  source_column: sr_return_ship_cost
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_refunded_cash
+  label: Total Refunded Cash
+  description: Sum of all cash refunds
+  source_column: sr_refunded_cash
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_reversed_charge
+  label: Total Reversed Charge
+  description: Sum of all reversed charges
+  source_column: sr_reversed_charge
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_store_credit
+  label: Total Store Credit
+  description: Sum of all store credits
+  source_column: sr_store_credit
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_net_loss
+  label: Total Net Loss
+  description: Sum of all net losses
+  source_column: sr_net_loss
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None

@@ -1,0 +1,40 @@
+osi_version: '0.1'
+source_table: inventory
+generated_at: '2026-06-07T22:09:37.916925'
+generated_by: MetricDefinitionAgent v1.0
+metrics:
+- name: total_inventory
+  label: Total Inventory
+  description: Total quantity of items in inventory
+  source_column: inv_quantity_on_hand
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: average_inventory
+  label: Average Inventory
+  description: Average quantity of items in inventory
+  source_column: inv_quantity_on_hand
+  aggregation_function: AVERAGE
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: min_inventory
+  label: Minimum Inventory
+  description: Minimum quantity of items in inventory
+  source_column: inv_quantity_on_hand
+  aggregation_function: MIN
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: max_inventory
+  label: Maximum Inventory
+  description: Maximum quantity of items in inventory
+  source_column: inv_quantity_on_hand
+  aggregation_function: MAX
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: inventory_count
+  label: Inventory Count
+  description: Number of unique inventory records
+  source_column: inv_item_sk
+  aggregation_function: COUNT
+  semantic_type: OPERATIONAL
+  business_rules: None

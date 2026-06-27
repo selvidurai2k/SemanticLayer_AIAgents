@@ -1,0 +1,16 @@
+- timestamp: '2026-06-14T14:15:03.440693'
+  client_ip: 127.0.0.1
+  method: governance_status
+  params: {}
+  status: OK
+- timestamp: '2026-06-14T14:15:50.122132'
+  client_ip: 127.0.0.1
+  method: list_metrics
+  params: {}
+  status: OK
+- timestamp: '2026-06-14T14:16:15.466223'
+  client_ip: 127.0.0.1
+  method: query_metric
+  params:
+    metric_name: total_net_profit
+  status: OK

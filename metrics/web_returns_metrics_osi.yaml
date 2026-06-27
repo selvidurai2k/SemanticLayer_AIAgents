@@ -1,0 +1,82 @@
+osi_version: '0.1'
+source_table: web_returns
+generated_at: '2026-06-07T22:09:37.138392'
+generated_by: MetricDefinitionAgent v1.0
+metrics:
+- name: total_web_returns
+  label: Total Web Returns
+  description: Total number of web returns
+  source_column: wr_returned_date_sk
+  aggregation_function: COUNT
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_return_amount
+  label: Total Web Return Amount
+  description: Total amount of web returns
+  source_column: wr_return_amt
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: average_web_return_amount
+  label: Average Web Return Amount
+  description: Average amount of each web return
+  source_column: wr_return_amt
+  aggregation_function: AVERAGE
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_return_tax
+  label: Total Web Return Tax
+  description: Total tax amount of web returns
+  source_column: wr_return_tax
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_return_quantity
+  label: Total Web Return Quantity
+  description: Total quantity of items returned through the web
+  source_column: wr_return_quantity
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_return_fee
+  label: Total Web Return Fee
+  description: Total fee amount of web returns
+  source_column: wr_fee
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_return_ship_cost
+  label: Total Web Return Ship Cost
+  description: Total shipping cost of web returns
+  source_column: wr_return_ship_cost
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_refunded_cash
+  label: Total Web Refunded Cash
+  description: Total cash amount refunded through the web
+  source_column: wr_refunded_cash
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_reversed_charge
+  label: Total Web Reversed Charge
+  description: Total amount of reversed charges through the web
+  source_column: wr_reversed_charge
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_account_credit
+  label: Total Web Account Credit
+  description: Total account credit amount through the web
+  source_column: wr_account_credit
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_web_net_loss
+  label: Total Web Net Loss
+  description: Total net loss amount of web returns
+  source_column: wr_net_loss
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None

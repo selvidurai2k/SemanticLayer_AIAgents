@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: cube_pass
       POSTGRES_DB: tpcds
     ports:
-      - "5432:5432"
+      - "5432:5432"      
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./docker/initdb:/docker-entrypoint-initdb.d
@@ -16,6 +16,10 @@ services:
     image: cubejs/cube:latest
     ports:
       - "4000:4000"
+      - "15432:15432"
+    volumes:
+      - ./cubejs:/cube/conf
+      - ./.cubestore:/cube/.cubestore
     environment:
       CUBEJS_DB_TYPE: postgres
       CUBEJS_DB_HOST: postgres
@@ -25,6 +29,9 @@ services:
       CUBEJS_DB_PASS: cube_pass
       CUBEJS_API_SECRET: changeme_for_prod
       CUBEJS_DEV_MODE: "true"
+      CUBEJS_PG_SQL_PORT: 15432
+      CUBEJS_SQL_USER: cube
+      CUBEJS_SQL_PASSWORD: cube_pass
     depends_on:
       - postgres
 

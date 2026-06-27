@@ -1,0 +1,77 @@
+table: store_sales
+generated_at: '2026-06-14T13:57:30.669001'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: total_sales
+  display_name: Total Sales
+  description: Sum of sales amount across all transactions
+  column: ss_ext_sales_price
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: total_net_profit
+  display_name: Total Net Profit
+  description: Sum of net profit after deducting wholesale cost and discounts from
+    sales revenue
+  column: ss_net_profit
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: average_transaction_value
+  display_name: Average Transaction Value
+  description: Average sales amount per transaction
+  column: ss_ext_sales_price
+  type: avg
+  category: sales
+  business_rules: None
+- metric_name: total_quantity_sold
+  display_name: Total Quantity Sold
+  description: Total quantity of items sold across all transactions
+  column: ss_quantity
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: total_revenue
+  display_name: Total Revenue
+  description: Sum of net paid amount across all transactions
+  column: ss_net_paid
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: average_discount_amount
+  display_name: Average Discount Amount
+  description: Average discount amount per transaction
+  column: ss_ext_discount_amt
+  type: avg
+  category: sales
+  business_rules: None
+- metric_name: total_coupon_amount
+  display_name: Total Coupon Amount
+  description: Sum of coupon amount across all transactions
+  column: ss_coupon_amt
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: average_net_profit_per_item
+  display_name: Average Net Profit per Item
+  description: Average net profit per item sold
+  column: ss_net_profit
+  type: avg
+  category: finance
+  business_rules: None
+- metric_name: total_tax_amount
+  display_name: Total Tax Amount
+  description: Sum of tax amount across all transactions
+  column: ss_ext_tax
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: transaction_count
+  display_name: Transaction Count
+  description: Total number of transactions
+  column: ss_ticket_number
+  type: count
+  category: sales
+  business_rules: None
+last_modified: '2026-06-14T13:59:10.009873'

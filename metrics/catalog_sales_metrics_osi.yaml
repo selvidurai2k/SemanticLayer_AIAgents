@@ -1,0 +1,75 @@
+osi_version: '0.1'
+source_table: catalog_sales
+generated_at: '2026-06-07T22:09:31.715910'
+generated_by: MetricDefinitionAgent v1.0
+metrics:
+- name: total_net_sales
+  label: Total Net Sales
+  description: Sum of net sales across all catalog sales transactions
+  source_column: cs_net_paid
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_gross_sales
+  label: Total Gross Sales
+  description: Sum of gross sales across all catalog sales transactions
+  source_column: cs_ext_sales_price
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: average_transaction_value
+  label: Average Transaction Value
+  description: Average sales amount per catalog sales transaction
+  source_column: cs_net_paid
+  aggregation_function: AVERAGE
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_net_profit
+  label: Total Net Profit
+  description: Sum of net profit across all catalog sales transactions
+  source_column: cs_net_profit
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: average_profit_per_transaction
+  label: Average Profit per Transaction
+  description: Average profit per catalog sales transaction
+  source_column: cs_net_profit
+  aggregation_function: AVERAGE
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_sales_quantity
+  label: Total Sales Quantity
+  description: Total quantity of items sold across all catalog sales transactions
+  source_column: cs_quantity
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_discount_amount
+  label: Total Discount Amount
+  description: Sum of discount amounts applied across all catalog sales transactions
+  source_column: cs_ext_discount_amt
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: average_discount_per_transaction
+  label: Average Discount per Transaction
+  description: Average discount amount per catalog sales transaction
+  source_column: cs_ext_discount_amt
+  aggregation_function: AVERAGE
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_shipping_cost
+  label: Total Shipping Cost
+  description: Sum of shipping costs across all catalog sales transactions
+  source_column: cs_ext_ship_cost
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: average_shipping_cost_per_transaction
+  label: Average Shipping Cost per Transaction
+  description: Average shipping cost per catalog sales transaction
+  source_column: cs_ext_ship_cost
+  aggregation_function: AVERAGE
+  semantic_type: REVENUE
+  business_rules: None

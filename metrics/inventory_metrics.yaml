@@ -1,0 +1,40 @@
+table: inventory
+generated_at: '2026-06-14T13:57:38.230877'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: average_inventory_on_hand
+  display_name: Average Inventory on Hand
+  description: Average quantity of items in the inventory
+  column: inv_quantity_on_hand
+  type: avg
+  category: inventory
+  business_rules: None
+- metric_name: total_inventory_on_hand
+  display_name: Total Inventory on Hand
+  description: Total quantity of all items in the inventory
+  column: inv_quantity_on_hand
+  type: sum
+  category: inventory
+  business_rules: None
+- metric_name: min_inventory_on_hand
+  display_name: Minimum Inventory on Hand
+  description: Minimum quantity of items in the inventory
+  column: inv_quantity_on_hand
+  type: min
+  category: inventory
+  business_rules: None
+- metric_name: max_inventory_on_hand
+  display_name: Maximum Inventory on Hand
+  description: Maximum quantity of items in the inventory
+  column: inv_quantity_on_hand
+  type: max
+  category: inventory
+  business_rules: None
+- metric_name: number_of_inventory_records
+  display_name: Number of Inventory Records
+  description: Number of unique inventory records
+  column: inv_item_sk
+  type: count
+  category: inventory
+  business_rules: None

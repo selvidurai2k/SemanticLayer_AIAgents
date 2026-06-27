@@ -1,0 +1,478 @@
+report_type: Metric Consistency Report
+generated_at: '2026-05-25T05:43:01.248786'
+generated_by: MetricConsistencyAgent v1.0
+summary:
+  total_tables: 7
+  total_metrics: 68
+  total_issues: 33
+  high_severity: 2
+  medium_severity: 31
+  low_severity: 0
+  consistency_score: 0
+ai_review:
+  overall_assessment: The overall metric consistency across the retail analytics semantic
+    layer is inconsistent, with multiple issues identified, including type mismatches,
+    category mismatches, and missing metrics. These inconsistencies can lead to inaccurate
+    analysis and decision-making. Addressing these issues is crucial to ensure data
+    integrity and reliability.
+  critical_issues:
+  - issue: TYPE_MISMATCH for 'total returns' metric
+    recommendation: Standardize the aggregation type for 'total returns' to either
+      sum or count across all tables, ensuring consistency in calculation and analysis.
+  - issue: CATEGORY_MISMATCH for 'total return ship cost', 'total refunded cash',
+      and 'total reversed charge' metrics
+    recommendation: Categorize these metrics consistently across tables, either under
+      'finance' or 'returns', to ensure accurate analysis and reporting.
+  - issue: TYPE_MISMATCH for 'return rate' metric
+    recommendation: Standardize the aggregation type for 'return rate' to either average
+      or count across all tables, ensuring consistency in calculation and analysis.
+  standardisation_rules:
+  - Establish a unified categorization framework for all metrics, with clear definitions
+    and guidelines for categorization.
+  - Define a set of standardized aggregation types for each metric, ensuring consistency
+    across tables and analysis.
+  - Implement a data governance process to regularly review and update metrics, ensuring
+    consistency and accuracy across the semantic layer.
+  - Develop a data dictionary to document all metrics, including their definitions,
+    calculations, and categories, to ensure transparency and understanding.
+issues:
+- issue_type: TYPE_MISMATCH
+  severity: HIGH
+  metric_name: total returns
+  description: Metric 'total returns' uses different aggregation types across tables
+  details:
+  - table: catalog_returns
+    metric_name: total_returns
+    display_name: Total Returns
+    type: sum
+    column: cr_return_quantity
+    category: returns
+  - table: store_returns
+    metric_name: total_returns
+    display_name: Total Returns
+    type: sum
+    column: sr_return_quantity
+    category: returns
+  - table: web_returns
+    metric_name: total_returns
+    display_name: Total Returns
+    type: count
+    column: wr_returned_date_sk
+    category: returns
+  tables:
+  - catalog_returns
+  - store_returns
+  - web_returns
+  values:
+  - sum
+  - count
+- issue_type: CATEGORY_MISMATCH
+  severity: MEDIUM
+  metric_name: total return ship cost
+  description: Metric 'total return ship cost' belongs to different categories across
+    tables
+  details:
+  - table: catalog_returns
+    metric_name: total_return_ship_cost
+    display_name: Total Return Ship Cost
+    type: sum
+    column: cr_return_ship_cost
+    category: finance
+  - table: web_returns
+    metric_name: total_return_ship_cost
+    display_name: Total Return Ship Cost
+    type: sum
+    column: wr_return_ship_cost
+    category: returns
+  tables:
+  - catalog_returns
+  - web_returns
+  values:
+  - returns
+  - finance
+- issue_type: CATEGORY_MISMATCH
+  severity: MEDIUM
+  metric_name: total refunded cash
+  description: Metric 'total refunded cash' belongs to different categories across
+    tables
+  details:
+  - table: catalog_returns
+    metric_name: total_refunded_cash
+    display_name: Total Refunded Cash
+    type: sum
+    column: cr_refunded_cash
+    category: finance
+  - table: store_returns
+    metric_name: total_refunded_cash
+    display_name: Total Refunded Cash
+    type: sum
+    column: sr_refunded_cash
+    category: finance
+  - table: web_returns
+    metric_name: total_refunded_cash
+    display_name: Total Refunded Cash
+    type: sum
+    column: wr_refunded_cash
+    category: returns
+  tables:
+  - catalog_returns
+  - store_returns
+  - web_returns
+  values:
+  - returns
+  - finance
+- issue_type: CATEGORY_MISMATCH
+  severity: MEDIUM
+  metric_name: total reversed charge
+  description: Metric 'total reversed charge' belongs to different categories across
+    tables
+  details:
+  - table: catalog_returns
+    metric_name: total_reversed_charge
+    display_name: Total Reversed Charge
+    type: sum
+    column: cr_reversed_charge
+    category: finance
+  - table: web_returns
+    metric_name: total_reversed_charge
+    display_name: Total Reversed Charge
+    type: sum
+    column: wr_reversed_charge
+    category: returns
+  tables:
+  - catalog_returns
+  - web_returns
+  values:
+  - returns
+  - finance
+- issue_type: TYPE_MISMATCH
+  severity: HIGH
+  metric_name: return rate
+  description: Metric 'return rate' uses different aggregation types across tables
+  details:
+  - table: catalog_returns
+    metric_name: return_rate
+    display_name: Return Rate
+    type: avg
+    column: cr_return_quantity
+    category: returns
+  - table: store_returns
+    metric_name: return_rate
+    display_name: Return Rate
+    type: count
+    column: sr_return_quantity
+    category: returns
+  tables:
+  - catalog_returns
+  - store_returns
+  values:
+  - avg
+  - count
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: average net paid inc tax
+  description: Metric 'average net paid inc tax' exists in ['store_sales'] but is
+    missing in ['catalog_sales', 'web_sales']
+  present_in:
+  - store_sales
+  missing_in:
+  - catalog_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: average sale price
+  description: Metric 'average sale price' exists in ['store_sales'] but is missing
+    in ['catalog_sales', 'web_sales']
+  present_in:
+  - store_sales
+  missing_in:
+  - catalog_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total net paid
+  description: Metric 'total net paid' exists in ['store_sales'] but is missing in
+    ['catalog_sales', 'web_sales']
+  present_in:
+  - store_sales
+  missing_in:
+  - catalog_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total coupon amount
+  description: Metric 'total coupon amount' exists in ['store_sales', 'web_sales']
+    but is missing in ['catalog_sales']
+  present_in:
+  - store_sales
+  - web_sales
+  missing_in:
+  - catalog_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: average order value
+  description: Metric 'average order value' exists in ['catalog_sales'] but is missing
+    in ['store_sales', 'web_sales']
+  present_in:
+  - catalog_sales
+  missing_in:
+  - store_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: transaction count
+  description: Metric 'transaction count' exists in ['store_sales'] but is missing
+    in ['catalog_sales', 'web_sales']
+  present_in:
+  - store_sales
+  missing_in:
+  - catalog_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total ship cost
+  description: Metric 'total ship cost' exists in ['web_sales'] but is missing in
+    ['store_sales', 'catalog_sales']
+  present_in:
+  - web_sales
+  missing_in:
+  - store_sales
+  - catalog_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total shipping cost
+  description: Metric 'total shipping cost' exists in ['catalog_sales'] but is missing
+    in ['store_sales', 'web_sales']
+  present_in:
+  - catalog_sales
+  missing_in:
+  - store_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total list price
+  description: Metric 'total list price' exists in ['catalog_sales'] but is missing
+    in ['store_sales', 'web_sales']
+  present_in:
+  - catalog_sales
+  missing_in:
+  - store_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total items sold
+  description: Metric 'total items sold' exists in ['catalog_sales'] but is missing
+    in ['store_sales', 'web_sales']
+  present_in:
+  - catalog_sales
+  missing_in:
+  - store_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total discounts
+  description: Metric 'total discounts' exists in ['catalog_sales'] but is missing
+    in ['store_sales', 'web_sales']
+  present_in:
+  - catalog_sales
+  missing_in:
+  - store_sales
+  - web_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total revenue
+  description: Metric 'total revenue' exists in ['catalog_sales', 'web_sales'] but
+    is missing in ['store_sales']
+  present_in:
+  - catalog_sales
+  - web_sales
+  missing_in:
+  - store_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: number of transactions
+  description: Metric 'number of transactions' exists in ['web_sales'] but is missing
+    in ['store_sales', 'catalog_sales']
+  present_in:
+  - web_sales
+  missing_in:
+  - store_sales
+  - catalog_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: average sales price
+  description: Metric 'average sales price' exists in ['web_sales'] but is missing
+    in ['store_sales', 'catalog_sales']
+  present_in:
+  - web_sales
+  missing_in:
+  - store_sales
+  - catalog_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total discount amount
+  description: Metric 'total discount amount' exists in ['store_sales', 'web_sales']
+    but is missing in ['catalog_sales']
+  present_in:
+  - store_sales
+  - web_sales
+  missing_in:
+  - catalog_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total tax revenue
+  description: Metric 'total tax revenue' exists in ['web_sales'] but is missing in
+    ['store_sales', 'catalog_sales']
+  present_in:
+  - web_sales
+  missing_in:
+  - store_sales
+  - catalog_sales
+  group: sales
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total account credit
+  description: Metric 'total account credit' exists in ['web_returns'] but is missing
+    in ['store_returns', 'catalog_returns']
+  present_in:
+  - web_returns
+  missing_in:
+  - store_returns
+  - catalog_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: return rate
+  description: Metric 'return rate' exists in ['store_returns', 'catalog_returns']
+    but is missing in ['web_returns']
+  present_in:
+  - store_returns
+  - catalog_returns
+  missing_in:
+  - web_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total return tax
+  description: Metric 'total return tax' exists in ['catalog_returns', 'web_returns']
+    but is missing in ['store_returns']
+  present_in:
+  - catalog_returns
+  - web_returns
+  missing_in:
+  - store_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total fee
+  description: Metric 'total fee' exists in ['catalog_returns'] but is missing in
+    ['store_returns', 'web_returns']
+  present_in:
+  - catalog_returns
+  missing_in:
+  - store_returns
+  - web_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total returned quantity
+  description: Metric 'total returned quantity' exists in ['web_returns'] but is missing
+    in ['store_returns', 'catalog_returns']
+  present_in:
+  - web_returns
+  missing_in:
+  - store_returns
+  - catalog_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total return fee
+  description: Metric 'total return fee' exists in ['web_returns'] but is missing
+    in ['store_returns', 'catalog_returns']
+  present_in:
+  - web_returns
+  missing_in:
+  - store_returns
+  - catalog_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total reversed charge
+  description: Metric 'total reversed charge' exists in ['catalog_returns', 'web_returns']
+    but is missing in ['store_returns']
+  present_in:
+  - catalog_returns
+  - web_returns
+  missing_in:
+  - store_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total store credit
+  description: Metric 'total store credit' exists in ['store_returns', 'catalog_returns']
+    but is missing in ['web_returns']
+  present_in:
+  - store_returns
+  - catalog_returns
+  missing_in:
+  - web_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total return ship cost
+  description: Metric 'total return ship cost' exists in ['catalog_returns', 'web_returns']
+    but is missing in ['store_returns']
+  present_in:
+  - catalog_returns
+  - web_returns
+  missing_in:
+  - store_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: average return time
+  description: Metric 'average return time' exists in ['store_returns'] but is missing
+    in ['catalog_returns', 'web_returns']
+  present_in:
+  - store_returns
+  missing_in:
+  - catalog_returns
+  - web_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: top return reasons
+  description: Metric 'top return reasons' exists in ['store_returns'] but is missing
+    in ['catalog_returns', 'web_returns']
+  present_in:
+  - store_returns
+  missing_in:
+  - catalog_returns
+  - web_returns
+  group: returns
+- issue_type: MISSING_METRIC
+  severity: MEDIUM
+  metric_name: total return amount including tax
+  description: Metric 'total return amount including tax' exists in ['catalog_returns']
+    but is missing in ['store_returns', 'web_returns']
+  present_in:
+  - catalog_returns
+  missing_in:
+  - store_returns
+  - web_returns
+  group: returns

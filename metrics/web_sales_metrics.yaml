@@ -1,0 +1,54 @@
+table: web_sales
+generated_at: '2026-06-14T13:57:33.117098'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: total_web_sales
+  display_name: Total Web Sales
+  description: Sum of sales amount across all web transactions
+  column: ws_ext_sales_price
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: total_net_profit
+  display_name: Total Net Profit
+  description: Sum of net profit across all web transactions
+  column: ws_net_profit
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: average_transaction_value
+  display_name: Average Transaction Value
+  description: Average sales amount per web transaction
+  column: ws_ext_sales_price
+  type: avg
+  category: sales
+  business_rules: None
+- metric_name: total_quantity_sold
+  display_name: Total Quantity Sold
+  description: Sum of quantity sold across all web transactions
+  column: ws_quantity
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: total_web_revenue
+  display_name: Total Web Revenue
+  description: Sum of revenue generated from all web transactions
+  column: ws_ext_sales_price
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: total_web_discount
+  display_name: Total Web Discount
+  description: Sum of discounts applied across all web transactions
+  column: ws_ext_discount_amt
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: average_web_order_value
+  display_name: Average Web Order Value
+  description: Average sales amount per web order
+  column: ws_ext_sales_price
+  type: avg
+  category: sales
+  business_rules: Group by ws_order_number

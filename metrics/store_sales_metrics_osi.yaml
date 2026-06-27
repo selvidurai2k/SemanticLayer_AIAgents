@@ -1,0 +1,75 @@
+osi_version: '0.1'
+source_table: store_sales
+generated_at: '2026-06-07T22:09:30.198280'
+generated_by: MetricDefinitionAgent v1.0
+metrics:
+- name: total_net_sales
+  label: Total Net Sales
+  description: Sum of net sales amount across all transactions
+  source_column: ss_net_paid
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_gross_sales
+  label: Total Gross Sales
+  description: Sum of gross sales amount across all transactions
+  source_column: ss_ext_sales_price
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: average_transaction_value
+  label: Average Transaction Value
+  description: Average value of each transaction
+  source_column: ss_net_paid
+  aggregation_function: AVERAGE
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_net_profit
+  label: Total Net Profit
+  description: Sum of net profit across all transactions
+  source_column: ss_net_profit
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: average_profit_per_transaction
+  label: Average Profit per Transaction
+  description: Average profit made per transaction
+  source_column: ss_net_profit
+  aggregation_function: AVERAGE
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_items_sold
+  label: Total Items Sold
+  description: Total number of items sold across all transactions
+  source_column: ss_quantity
+  aggregation_function: SUM
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_customers
+  label: Total Customers
+  description: Total number of unique customers
+  source_column: ss_customer_sk
+  aggregation_function: COUNT
+  semantic_type: CUSTOMER
+  business_rules: Distinct count
+- name: average_discount_amount
+  label: Average Discount Amount
+  description: Average discount amount given to customers
+  source_column: ss_ext_discount_amt
+  aggregation_function: AVERAGE
+  semantic_type: REVENUE
+  business_rules: None
+- name: total_revenue_from_coupons
+  label: Total Revenue from Coupons
+  description: Total revenue generated from coupon redemptions
+  source_column: ss_coupon_amt
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None
+- name: total_tax_collected
+  label: Total Tax Collected
+  description: Total tax amount collected across all transactions
+  source_column: ss_ext_tax
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None

@@ -1,0 +1,40 @@
+table: web_returns
+generated_at: '2026-06-14T13:57:37.110833'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: total_web_returns
+  display_name: Total Web Returns
+  description: Count of all web return transactions
+  column: wr_returned_date_sk
+  type: count
+  category: returns
+  business_rules: None
+- metric_name: total_web_returned_quantity
+  display_name: Total Web Returned Quantity
+  description: Sum of all quantities returned through the web channel
+  column: wr_return_quantity
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_web_return_amount
+  display_name: Total Web Return Amount
+  description: Sum of all amounts returned through the web channel
+  column: wr_return_amt
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: average_web_return_amount
+  display_name: Average Web Return Amount
+  description: Average amount returned per web return transaction
+  column: wr_return_amt
+  type: avg
+  category: returns
+  business_rules: None
+- metric_name: total_web_return_tax
+  display_name: Total Web Return Tax
+  description: Sum of all taxes associated with web returns
+  column: wr_return_tax
+  type: sum
+  category: returns
+  business_rules: None

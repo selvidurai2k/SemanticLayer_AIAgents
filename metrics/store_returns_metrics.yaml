@@ -1,0 +1,75 @@
+table: store_returns
+generated_at: '2026-06-14T13:57:34.655791'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: total_returns
+  display_name: Total Returns
+  description: Total number of returned items
+  column: sr_item_sk
+  type: count
+  category: returns
+  business_rules: None
+- metric_name: total_returned_quantity
+  display_name: Total Returned Quantity
+  description: Total quantity of items returned
+  column: sr_return_quantity
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_return_amount
+  display_name: Total Return Amount
+  description: Total amount of returns
+  column: sr_return_amt
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: average_return_amount
+  display_name: Average Return Amount
+  description: Average amount per return
+  column: sr_return_amt
+  type: avg
+  category: returns
+  business_rules: None
+- metric_name: total_return_tax
+  display_name: Total Return Tax
+  description: Total tax amount on returns
+  column: sr_return_tax
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_refunded_cash
+  display_name: Total Refunded Cash
+  description: Total cash amount refunded to customers
+  column: sr_refunded_cash
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_reversed_charge
+  display_name: Total Reversed Charge
+  description: Total charge amount reversed
+  column: sr_reversed_charge
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_store_credit
+  display_name: Total Store Credit
+  description: Total store credit amount given to customers
+  column: sr_store_credit
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_net_loss
+  display_name: Total Net Loss
+  description: Total net loss amount due to returns
+  column: sr_net_loss
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: return_rate
+  display_name: Return Rate
+  description: Ratio of returned items to total items sold
+  column: sr_item_sk
+  type: count
+  category: returns
+  business_rules: Requires total items sold data for calculation

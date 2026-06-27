@@ -1,0 +1,62 @@
+table: catalog_returns
+generated_at: '2026-06-14T13:57:35.983485'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: total_catalog_returns
+  display_name: Total Catalog Returns
+  description: Number of returns made through the catalog channel
+  column: cr_order_number
+  type: count
+  category: returns
+  business_rules: None
+- metric_name: total_returned_quantity_from_catalog
+  display_name: Total Returned Quantity from Catalog
+  description: Total quantity of items returned through the catalog channel
+  column: cr_return_quantity
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_return_amount_from_catalog
+  display_name: Total Return Amount from Catalog
+  description: Total amount of returns made through the catalog channel
+  column: cr_return_amount
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: average_return_amount_from_catalog
+  display_name: Average Return Amount from Catalog
+  description: Average amount of each return made through the catalog channel
+  column: cr_return_amount
+  type: avg
+  category: returns
+  business_rules: None
+- metric_name: total_return_tax_from_catalog
+  display_name: Total Return Tax from Catalog
+  description: Total tax amount associated with returns made through the catalog channel
+  column: cr_return_tax
+  type: sum
+  category: returns
+  business_rules: None
+- metric_name: total_catalog_return_fee
+  display_name: Total Catalog Return Fee
+  description: Total fee charged for returns made through the catalog channel
+  column: cr_fee
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: total_catalog_return_ship_cost
+  display_name: Total Catalog Return Ship Cost
+  description: Total shipping cost associated with returns made through the catalog
+    channel
+  column: cr_return_ship_cost
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: total_catalog_net_loss
+  display_name: Total Catalog Net Loss
+  description: Total net loss incurred due to returns made through the catalog channel
+  column: cr_net_loss
+  type: sum
+  category: finance
+  business_rules: None

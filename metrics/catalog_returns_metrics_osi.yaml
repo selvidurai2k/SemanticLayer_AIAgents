@@ -1,0 +1,47 @@
+osi_version: '0.1'
+source_table: catalog_returns
+generated_at: '2026-06-07T22:09:35.603773'
+generated_by: MetricDefinitionAgent v1.0
+metrics:
+- name: total_catalog_returns
+  label: Total Catalog Returns
+  description: Total number of catalog returns
+  source_column: cr_returned_date_sk
+  aggregation_function: COUNT
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_return_amount_catalog
+  label: Total Return Amount (Catalog)
+  description: Total amount of catalog returns
+  source_column: cr_return_amount
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: average_return_amount_catalog
+  label: Average Return Amount (Catalog)
+  description: Average amount per catalog return
+  source_column: cr_return_amount
+  aggregation_function: AVERAGE
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_return_tax_catalog
+  label: Total Return Tax (Catalog)
+  description: Total tax amount for catalog returns
+  source_column: cr_return_tax
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_return_quantity_catalog
+  label: Total Return Quantity (Catalog)
+  description: Total quantity of items returned through catalog
+  source_column: cr_return_quantity
+  aggregation_function: SUM
+  semantic_type: OPERATIONAL
+  business_rules: None
+- name: total_net_loss_catalog
+  label: Total Net Loss (Catalog)
+  description: Total net loss due to catalog returns
+  source_column: cr_net_loss
+  aggregation_function: SUM
+  semantic_type: FINANCIAL
+  business_rules: None

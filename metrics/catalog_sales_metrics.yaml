@@ -1,0 +1,76 @@
+table: catalog_sales
+generated_at: '2026-06-14T13:57:31.988816'
+generated_by: MetricDefinitionAgent v1.0
+version: '1.0'
+metrics:
+- metric_name: total_sales
+  display_name: Total Sales
+  description: Total sales across all catalog sales transactions
+  column: cs_ext_sales_price
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: total_net_profit
+  display_name: Total Net Profit
+  description: Total net profit across all catalog sales transactions
+  column: cs_net_profit
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: average_transaction_value
+  display_name: Average Transaction Value
+  description: Average sales amount per transaction
+  column: cs_ext_sales_price
+  type: avg
+  category: sales
+  business_rules: None
+- metric_name: total_quantity_sold
+  display_name: Total Quantity Sold
+  description: Total quantity of items sold across all catalog sales transactions
+  column: cs_quantity
+  type: sum
+  category: sales
+  business_rules: None
+- metric_name: total_revenue
+  display_name: Total Revenue
+  description: Total revenue generated from catalog sales
+  column: cs_ext_sales_price
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: average_discount_amount
+  display_name: Average Discount Amount
+  description: Average discount amount per transaction
+  column: cs_ext_discount_amt
+  type: avg
+  category: sales
+  business_rules: None
+- metric_name: total_shipping_cost
+  display_name: Total Shipping Cost
+  description: Total shipping cost across all catalog sales transactions
+  column: cs_ext_ship_cost
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: average_sales_price
+  display_name: Average Sales Price
+  description: Average sales price per item
+  column: cs_sales_price
+  type: avg
+  category: sales
+  business_rules: None
+- metric_name: total_wholesale_cost
+  display_name: Total Wholesale Cost
+  description: Total wholesale cost across all catalog sales transactions
+  column: cs_ext_wholesale_cost
+  type: sum
+  category: finance
+  business_rules: None
+- metric_name: gross_margin
+  display_name: Gross Margin
+  description: Difference between total sales and wholesale cost
+  column: cs_net_profit
+  type: sum
+  category: finance
+  business_rules: Calculated as net_paid minus wholesale_cost
+last_modified: '2026-06-14T13:59:11.348137'

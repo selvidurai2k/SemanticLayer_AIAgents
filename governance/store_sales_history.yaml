@@ -1,0 +1,155 @@
+- version: 1
+  timestamp: '2026-05-25T05:47:32.838652'
+  changed_by: selvi.durai@ljmu.ac.uk
+  change_type: PRE_CHANGE_DESCRIPTION
+  change_reason: Improving metric description clarity for business users
+  metrics_hash: 6030b53c
+  metrics:
+  - metric_name: total_sales
+    display_name: Total Sales
+    description: Sum of sales amount across all transactions
+    column: ss_ext_sales_price
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_net_paid
+    display_name: Total Net Paid
+    description: Sum of net paid amount across all transactions
+    column: ss_net_paid
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: average_sale_price
+    display_name: Average Sale Price
+    description: Average sales price across all transactions
+    column: ss_sales_price
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_wholesale_cost
+    display_name: Total Wholesale Cost
+    description: Sum of wholesale cost across all transactions
+    column: ss_ext_wholesale_cost
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: total_discount_amount
+    display_name: Total Discount Amount
+    description: Sum of discount amount across all transactions
+    column: ss_ext_discount_amt
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_net_profit
+    display_name: Total Net Profit
+    description: Sum of net profit across all transactions
+    column: ss_net_profit
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: transaction_count
+    display_name: Transaction Count
+    description: Number of transactions
+    column: ss_ticket_number
+    type: count
+    category: sales
+    business_rules: None
+  - metric_name: average_quantity_sold
+    display_name: Average Quantity Sold
+    description: Average quantity sold per transaction
+    column: ss_quantity
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_coupon_amount
+    display_name: Total Coupon Amount
+    description: Sum of coupon amount across all transactions
+    column: ss_coupon_amt
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: average_net_paid_inc_tax
+    display_name: Average Net Paid Inc Tax
+    description: Average net paid amount including tax per transaction
+    column: ss_net_paid_inc_tax
+    type: avg
+    category: finance
+    business_rules: None
+- version: 2
+  timestamp: '2026-05-25T05:47:32.864403'
+  changed_by: selvi.durai@ljmu.ac.uk
+  change_type: POST_CHANGE_DESCRIPTION
+  change_reason: Improving metric description clarity for business users
+  metrics_hash: d68807ea
+  metrics:
+  - metric_name: total_sales
+    display_name: Total Sales
+    description: Sum of sales amount across all transactions
+    column: ss_ext_sales_price
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_net_paid
+    display_name: Total Net Paid
+    description: Sum of net paid amount across all transactions
+    column: ss_net_paid
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: average_sale_price
+    display_name: Average Sale Price
+    description: Average sales price across all transactions
+    column: ss_sales_price
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_wholesale_cost
+    display_name: Total Wholesale Cost
+    description: Sum of wholesale cost across all transactions
+    column: ss_ext_wholesale_cost
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: total_discount_amount
+    display_name: Total Discount Amount
+    description: Sum of discount amount across all transactions
+    column: ss_ext_discount_amt
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_net_profit
+    display_name: Total Net Profit
+    description: Sum of net profit after deducting wholesale cost and discounts from
+      sales revenue
+    column: ss_net_profit
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: transaction_count
+    display_name: Transaction Count
+    description: Number of transactions
+    column: ss_ticket_number
+    type: count
+    category: sales
+    business_rules: None
+  - metric_name: average_quantity_sold
+    display_name: Average Quantity Sold
+    description: Average quantity sold per transaction
+    column: ss_quantity
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_coupon_amount
+    display_name: Total Coupon Amount
+    description: Sum of coupon amount across all transactions
+    column: ss_coupon_amt
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: average_net_paid_inc_tax
+    display_name: Average Net Paid Inc Tax
+    description: Average net paid amount including tax per transaction
+    column: ss_net_paid_inc_tax
+    type: avg
+    category: finance
+    business_rules: None

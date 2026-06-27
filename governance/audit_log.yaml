@@ -1,0 +1,50 @@
+- timestamp: '2026-05-25T05:47:32.456118'
+  table: store_returns
+  metric_name: return_rate
+  change_type: UPDATE_TYPE
+  old_value:
+    type: count
+  new_value:
+    type: avg
+  changed_by: selvi.durai@ljmu.ac.uk
+  reason: Standardising return_rate to AVG across all return tables for consistency
+  status: REJECTED
+- timestamp: '2026-05-25T05:47:32.883767'
+  table: store_sales
+  metric_name: total_net_profit
+  change_type: UPDATE_DESCRIPTION
+  old_value:
+    description: Sum of net profit across all transactions
+  new_value:
+    description: Sum of net profit after deducting wholesale cost and discounts from
+      sales revenue
+  changed_by: selvi.durai@ljmu.ac.uk
+  reason: Improving metric description clarity for business users
+  status: APPROVED
+- timestamp: '2026-05-25T05:47:33.372718'
+  table: store_sales
+  metric_name: total_sales
+  change_type: UPDATE_TYPE
+  old_value:
+    type: sum
+  new_value:
+    type: count
+  changed_by: unknown_user
+  reason: Just trying something
+  status: REJECTED
+- timestamp: '2026-05-25T05:47:33.816087'
+  table: catalog_sales
+  metric_name: gross_margin
+  change_type: ADD_METRIC
+  old_value: {}
+  new_value:
+    metric_name: gross_margin
+    display_name: Gross Margin
+    description: Difference between total sales and wholesale cost
+    column: cs_net_profit
+    type: sum
+    category: finance
+    business_rules: Calculated as net_paid minus wholesale_cost
+  changed_by: selvi.durai@ljmu.ac.uk
+  reason: Adding gross margin metric for profitability analysis in thesis
+  status: APPROVED

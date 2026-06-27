@@ -1,0 +1,59 @@
+- queued_at: '2026-06-14T13:59:09.493169'
+  table: store_returns
+  metric_name: return_rate
+  change_type: UPDATE_TYPE
+  old_metric:
+    metric_name: return_rate
+    display_name: Return Rate
+    description: Ratio of returned items to total items sold
+    column: sr_item_sk
+    type: count
+    category: returns
+    business_rules: Requires total items sold data for calculation
+  new_metric:
+    metric_name: return_rate
+    display_name: Return Rate
+    description: Ratio of returned items to total items sold
+    column: sr_item_sk
+    type: avg
+    category: returns
+    business_rules: Requires total items sold data for calculation
+  reason: Standardising return_rate to AVG across all return tables for consistency
+  changed_by: selvi.durai@ljmu.ac.uk
+  ai_confidence: 80
+  ai_assessment: The change from count to average for return_rate may break existing
+    business logic and impact downstream analytics
+  ai_concerns:
+  - Inconsistent aggregation type may lead to incorrect interpretations
+  - Potential impact on existing reports and dashboards
+  status: PENDING_HUMAN_REVIEW
+- queued_at: '2026-06-14T13:59:10.814317'
+  table: store_sales
+  metric_name: total_sales
+  change_type: UPDATE_TYPE
+  old_metric:
+    metric_name: total_sales
+    display_name: Total Sales
+    description: Sum of sales amount across all transactions
+    column: ss_ext_sales_price
+    type: sum
+    category: sales
+    business_rules: None
+  new_metric:
+    metric_name: total_sales
+    display_name: Total Sales
+    description: Sum of sales amount across all transactions
+    column: ss_ext_sales_price
+    type: count
+    category: sales
+    business_rules: None
+  reason: Just trying something
+  changed_by: unknown_user
+  ai_confidence: 0
+  ai_assessment: The proposed change from sum to count for the total_sales metric
+    breaks the business logic and has a significant impact on the sales tracking
+  ai_concerns:
+  - Inconsistent metric calculation
+  - Invalid reason provided
+  - Potential impact on business decisions
+  status: PENDING_HUMAN_REVIEW

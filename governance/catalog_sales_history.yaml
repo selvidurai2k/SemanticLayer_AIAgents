@@ -1,0 +1,161 @@
+- version: 1
+  timestamp: '2026-05-25T05:47:33.785717'
+  changed_by: selvi.durai@ljmu.ac.uk
+  change_type: PRE_ADD_METRIC
+  change_reason: Adding gross margin metric for profitability analysis in thesis
+  metrics_hash: 1695169c
+  metrics:
+  - metric_name: total_sales
+    display_name: Total Sales
+    description: Sum of sales amounts across all transactions
+    column: cs_ext_sales_price
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_revenue
+    display_name: Total Revenue
+    description: Sum of net amounts paid by customers, including tax and shipping
+    column: cs_net_paid_inc_ship_tax
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: average_order_value
+    display_name: Average Order Value
+    description: Average amount spent per order
+    column: cs_ext_sales_price
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_discounts
+    display_name: Total Discounts
+    description: Sum of discounts applied to orders
+    column: cs_ext_discount_amt
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_shipping_cost
+    display_name: Total Shipping Cost
+    description: Sum of shipping costs across all orders
+    column: cs_ext_ship_cost
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: total_net_profit
+    display_name: Total Net Profit
+    description: Sum of net profit across all transactions
+    column: cs_net_profit
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: average_quantity_sold
+    display_name: Average Quantity Sold
+    description: Average quantity of items sold per order
+    column: cs_quantity
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_items_sold
+    display_name: Total Items Sold
+    description: Total number of items sold across all orders
+    column: cs_quantity
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_wholesale_cost
+    display_name: Total Wholesale Cost
+    description: Sum of wholesale costs across all orders
+    column: cs_ext_wholesale_cost
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: total_list_price
+    display_name: Total List Price
+    description: Sum of list prices across all orders
+    column: cs_ext_list_price
+    type: sum
+    category: sales
+    business_rules: None
+- version: 2
+  timestamp: '2026-05-25T05:47:33.803528'
+  changed_by: selvi.durai@ljmu.ac.uk
+  change_type: POST_ADD_METRIC
+  change_reason: Adding gross margin metric for profitability analysis in thesis
+  metrics_hash: 29b0edfb
+  metrics:
+  - metric_name: total_sales
+    display_name: Total Sales
+    description: Sum of sales amounts across all transactions
+    column: cs_ext_sales_price
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_revenue
+    display_name: Total Revenue
+    description: Sum of net amounts paid by customers, including tax and shipping
+    column: cs_net_paid_inc_ship_tax
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: average_order_value
+    display_name: Average Order Value
+    description: Average amount spent per order
+    column: cs_ext_sales_price
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_discounts
+    display_name: Total Discounts
+    description: Sum of discounts applied to orders
+    column: cs_ext_discount_amt
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_shipping_cost
+    display_name: Total Shipping Cost
+    description: Sum of shipping costs across all orders
+    column: cs_ext_ship_cost
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: total_net_profit
+    display_name: Total Net Profit
+    description: Sum of net profit across all transactions
+    column: cs_net_profit
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: average_quantity_sold
+    display_name: Average Quantity Sold
+    description: Average quantity of items sold per order
+    column: cs_quantity
+    type: avg
+    category: sales
+    business_rules: None
+  - metric_name: total_items_sold
+    display_name: Total Items Sold
+    description: Total number of items sold across all orders
+    column: cs_quantity
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: total_wholesale_cost
+    display_name: Total Wholesale Cost
+    description: Sum of wholesale costs across all orders
+    column: cs_ext_wholesale_cost
+    type: sum
+    category: finance
+    business_rules: None
+  - metric_name: total_list_price
+    display_name: Total List Price
+    description: Sum of list prices across all orders
+    column: cs_ext_list_price
+    type: sum
+    category: sales
+    business_rules: None
+  - metric_name: gross_margin
+    display_name: Gross Margin
+    description: Difference between total sales and wholesale cost
+    column: cs_net_profit
+    type: sum
+    category: finance
+    business_rules: Calculated as net_paid minus wholesale_cost
